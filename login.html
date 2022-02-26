@@ -1,0 +1,33 @@
+<html>
+   <head>
+      <title>Login</title>
+      <link rel="stylesheet" href="/static/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <div class="center">
+         <input type="checkbox" id="show">
+         <label for="show" class="show-btn"><img src="/static/images/cloud.png"></label>
+         <div class="container">
+            <label for="show" class="close-btn fas fa-times" title="close"></label>
+            <div class="text">
+               Login Form
+            </div>
+            <form action="/login" method="post">
+               <div class="data">
+                  <label>Username</label>
+                  <input type="text" id="username" name="username">
+               </div>
+               <div class="data">
+                  <label>Password</label>
+                  <input type="text" id="password" name="password">
+               </div>
+               <div class="btn">
+                  <div class="inner"></div>
+                  <button type="submit" value="Submit">Login</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </body>
+</html>
