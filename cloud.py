@@ -20,7 +20,7 @@ def login():
     cookieValue = "{\"username\":\""+username+"\";\"password\":\""+password+"\"}"
     if CheckCredentials(username, password) == True:
         fileList, fileSizeList = GetData(username)
-        response = make_response(render_template("cloud.html", fileList = fileList, fileSizeList = fileSizeList))
+        response = make_response(render_template("cloud.html", fileList = fileList, fileSizeList = fileSizeList, username = username))
         response.set_cookie("data", cookieValue)
         return response
     return "<h1>wrong username or password</h1>"

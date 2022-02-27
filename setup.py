@@ -1,15 +1,18 @@
-import os, hashlib, re
+import os, hashlib, re, sys
+from pathlib import Path
 
 storagePath = os.getcwd() + "/static/STORAGE/"
 userDatabasePath = os.getcwd() + "/static/Database/userdatabase.db"
 pattern = re.compile("{\"username\":\"(.*)\";\"password\":\"(.*)\"}")
 
-def Run():
-    command = input("Enter a command for: \nAdd User [-n]\nDelete User [-d]")
+def Run():        
+    command = input("Enter a command for: \nAdd User [-n]\nDelete User [-d]\n")
     if command == "-n":
         AddUser()
     if command == "-d":
         DeleteUser()
+    if command == "setup":
+        SetUpDirectorys()
     return None
 
 def AddUser():
@@ -78,6 +81,16 @@ def GetUserData(_line):
     username = result.group(1)
     password = result.group(2)
     return username, password
+
+def SetUpDirectorys():
+    os.mkdir(os.getcwd()+"/static/Database")
+    open(os.getcwd()+"/static/Database/userdatabase.db")
+    os.mkdir(os.getcwd()+"/static/images")
+    os.mkdir(os.getcwd()+"/static/STORAGE")
+    Path(os.getcwd()+"/cloud.html").rename(os.getcwd()+"/templates/cloud.html")
+    Path(os.getcwd()+"/login.html").rename(os.getcwd()+"/templates/login.html")
+    Path(os.getcwd()+"/style.css").rename(os.getcwd()+"/static/style.css")
+    Path(os.getcwd()+"/upload.js").rename(os.getcwd()+"/static/upload.js")
 
 if __name__ == "__main__":
     Run()
