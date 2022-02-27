@@ -86,7 +86,7 @@ def SetUpDirectorys():
     base = os.getcwd()
     os.mkdir(base+"/static")
     os.mkdir(base+"/static/Database")
-    open(base+"/static/Database/userdatabase.db")
+    open(base+"/static/Database/userdatabase.db", "x")
     os.mkdir(base+"/static/images")
     os.mkdir(base+"/static/STORAGE")
     os.mkdir(base+"/templates")
