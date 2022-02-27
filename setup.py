@@ -83,14 +83,17 @@ def GetUserData(_line):
     return username, password
 
 def SetUpDirectorys():
-    os.mkdir(os.getcwd()+"/static/Database")
-    open(os.getcwd()+"/static/Database/userdatabase.db")
-    os.mkdir(os.getcwd()+"/static/images")
-    os.mkdir(os.getcwd()+"/static/STORAGE")
-    Path(os.getcwd()+"/cloud.html").rename(os.getcwd()+"/templates/cloud.html")
-    Path(os.getcwd()+"/login.html").rename(os.getcwd()+"/templates/login.html")
-    Path(os.getcwd()+"/style.css").rename(os.getcwd()+"/static/style.css")
-    Path(os.getcwd()+"/upload.js").rename(os.getcwd()+"/static/upload.js")
+    base = os.getcwd()
+    os.mkdir(base+"/static")
+    os.mkdir(base+"/static/Database")
+    open(base+"/static/Database/userdatabase.db")
+    os.mkdir(base+"/static/images")
+    os.mkdir(base+"/static/STORAGE")
+    os.mkdir(base+"/templates")
+    Path(base+"/cloud.html").rename(base+"/templates/cloud.html")
+    Path(base+"/login.html").rename(base+"/templates/login.html")
+    Path(base+"/style.css").rename(base+"/static/style.css")
+    Path(base+"/upload.js").rename(base+"/static/upload.js")
 
 if __name__ == "__main__":
     Run()
