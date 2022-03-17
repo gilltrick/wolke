@@ -13,7 +13,7 @@ Its a simple flask driven cloud service for personal use.
   -connect to the cloud @ localhost:5000<br>
   
  Create a new user for the database<br>
-  -run python setup<br>
+  -run python setup.py<br>
   -enter -n<br>
   -enter username<br>
   -enter password<br>
